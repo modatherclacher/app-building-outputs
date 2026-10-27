@@ -1,0 +1,18 @@
+name: ring_timer
+description: A Material 3 countdown timer with an animated progress ring and pause-resume controls.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
