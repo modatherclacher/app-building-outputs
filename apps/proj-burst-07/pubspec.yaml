@@ -1,0 +1,19 @@
+name: random_picker
+description: >-
+  Pick N random names from an editable list, with no repeats in a single draw.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
