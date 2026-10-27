@@ -1,6 +1,6 @@
 name: dispatch_probe
 description: A tiny tap counter with haptic feedback and a big number.
-publish_to: "none"
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:

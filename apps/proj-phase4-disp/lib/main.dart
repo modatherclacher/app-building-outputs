@@ -10,39 +10,38 @@ class DispatchProbeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const seed = Color(0xFF4F46E5);
     return MaterialApp(
       title: 'Dispatch Probe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: seed),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: seed,
+          seedColor: Colors.indigo,
           brightness: Brightness.dark,
         ),
       ),
       themeMode: ThemeMode.system,
-      home: const TapCounterScreen(),
+      home: const TapCounterPage(),
     );
   }
 }
 
-class TapCounterScreen extends StatefulWidget {
-  const TapCounterScreen({super.key});
+class TapCounterPage extends StatefulWidget {
+  const TapCounterPage({super.key});
 
   @override
-  State<TapCounterScreen> createState() => _TapCounterScreenState();
+  State<TapCounterPage> createState() => _TapCounterPageState();
 }
 
-class _TapCounterScreenState extends State<TapCounterScreen> {
+class _TapCounterPageState extends State<TapCounterPage> {
   int _count = 0;
 
   void _increment() {
-    HapticFeedback.mediumImpact();
+    HapticFeedback.lightImpact();
     setState(() => _count++);
   }
 
@@ -55,54 +54,42 @@ class _TapCounterScreenState extends State<TapCounterScreen> {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Scaffold(
-      body: SafeArea(
-        child: GestureDetector(
-          key: const Key('tap_area'),
-          behavior: HitTestBehavior.opaque,
-          onTap: _increment,
-          child: Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          '$_count',
-                          key: const Key('counter_value'),
-                          style: TextStyle(
-                            fontSize: 140,
-                            fontWeight: FontWeight.w900,
-                            color: scheme.primary,
-                            fontFeatures: const [
-                              FontFeature.tabularFigures(),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        _count == 1 ? 'tap' : 'taps',
-                        style: Theme.of(context).textTheme.titleMedium
-                            ?.copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    ],
+      appBar: AppBar(title: const Text('Dispatch Probe')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Tap the number',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 8),
+            GestureDetector(
+              onTap: _increment,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 16,
+                ),
+                child: Text(
+                  '$_count',
+                  style: TextStyle(
+                    fontSize: 140,
+                    height: 1.1,
+                    fontWeight: FontWeight.w800,
+                    color: scheme.primary,
+                    fontFeatures: const [FontFeature.tabularFigures()],
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 24),
-                child: TextButton.icon(
-                  key: const Key('reset_button'),
-                  onPressed: _count == 0 ? null : _reset,
-                  icon: const Icon(Icons.restart_alt),
-                  label: const Text('Reset'),
-                ),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 8),
+            FilledButton.tonalIcon(
+              onPressed: _reset,
+              icon: const Icon(Icons.restart_alt),
+              label: const Text('Reset'),
+            ),
+          ],
         ),
       ),
     );

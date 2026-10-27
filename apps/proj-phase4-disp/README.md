@@ -1,7 +1,8 @@
 # Dispatch Probe
 
-A tiny Flutter tap counter: tap anywhere on the screen to increment a big
-number, with haptic feedback on every tap and a stronger buzz on reset.
+A tiny Flutter tap counter: tap the big number to increment it, with a light
+haptic tick on every tap and a heavier buzz when you reset. Built with
+Material 3 and automatic light/dark theming.
 
 ## Run
 
