@@ -1,0 +1,73 @@
+import '../models/recipe.dart';
+
+const List<Recipe> sampleRecipes = [
+  Recipe(
+    id: 'pancakes',
+    title: 'Fluffy Buttermilk Pancakes',
+    emoji: '🥞',
+    description: 'Weekend-friendly pancakes that stay fluffy every time.',
+    baseServings: 4,
+    ingredients: [
+      Ingredient(name: 'all-purpose flour', amount: 2, unit: 'cups'),
+      Ingredient(name: 'granulated sugar', amount: 2, unit: 'tbsp'),
+      Ingredient(name: 'baking powder', amount: 2, unit: 'tsp'),
+      Ingredient(name: 'salt', amount: 0.5, unit: 'tsp'),
+      Ingredient(name: 'buttermilk', amount: 1.75, unit: 'cups'),
+      Ingredient(name: 'large eggs', amount: 2),
+      Ingredient(name: 'butter, melted', amount: 2, unit: 'tbsp'),
+      Ingredient(name: 'vanilla extract', amount: 1, unit: 'tsp'),
+    ],
+    steps: [
+      'Whisk the flour, sugar, baking powder and salt in a large bowl.',
+      'Whisk the buttermilk, eggs, melted butter and vanilla in a second bowl.',
+      'Fold the wet mix into the dry until just combined; lumps are fine.',
+      'Rest the batter for 5 minutes while a pan heats over medium.',
+      'Cook 1/4-cup portions until bubbles pop, then flip and cook 1 minute more.',
+    ],
+  ),
+  Recipe(
+    id: 'pasta',
+    title: 'Weeknight Margherita Pasta',
+    emoji: '🍝',
+    description: 'A 20-minute tomato-basil pasta built from pantry staples.',
+    baseServings: 2,
+    ingredients: [
+      Ingredient(name: 'spaghetti', amount: 200, unit: 'g'),
+      Ingredient(name: 'olive oil', amount: 2, unit: 'tbsp'),
+      Ingredient(name: 'garlic cloves, thinly sliced', amount: 3),
+      Ingredient(name: 'cherry tomatoes, halved', amount: 12),
+      Ingredient(name: 'tomato paste', amount: 1, unit: 'tbsp'),
+      Ingredient(name: 'fresh basil leaves', amount: 8),
+      Ingredient(name: 'grated parmesan', amount: 0.5, unit: 'cup'),
+      Ingredient(name: 'red pepper flakes', amount: 0.25, unit: 'tsp'),
+    ],
+    steps: [
+      'Boil the spaghetti in well-salted water until al dente.',
+      'Meanwhile, sizzle the garlic and pepper flakes in olive oil.',
+      'Add the tomatoes and tomato paste; cook until saucy, about 6 minutes.',
+      'Toss the drained pasta with the sauce, basil and parmesan.',
+      'Serve with an extra drizzle of olive oil.',
+    ],
+  ),
+  Recipe(
+    id: 'guacamole',
+    title: 'Classic Guacamole',
+    emoji: '🥑',
+    description: 'Chunky, bright guacamole that comes together in one bowl.',
+    baseServings: 4,
+    ingredients: [
+      Ingredient(name: 'ripe avocados', amount: 3),
+      Ingredient(name: 'lime, juiced', amount: 1),
+      Ingredient(name: 'salt', amount: 0.5, unit: 'tsp'),
+      Ingredient(name: 'white onion, finely diced', amount: 0.25, unit: 'cup'),
+      Ingredient(name: 'roma tomato, diced', amount: 1),
+      Ingredient(name: 'fresh cilantro, chopped', amount: 2, unit: 'tbsp'),
+    ],
+    steps: [
+      'Halve the avocados, remove the pits and scoop the flesh into a bowl.',
+      'Mash coarsely with a fork, leaving some chunks.',
+      'Fold in the lime juice, onion, tomato, cilantro and salt.',
+      'Taste and adjust lime or salt, then serve immediately.',
+    ],
+  ),
+];
